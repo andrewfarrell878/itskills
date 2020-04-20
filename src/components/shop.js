@@ -71,18 +71,26 @@ class Phone extends React.Component {
 
       
      
-      
+        
      
       <Card style={{ width: '40rem' }}>
+
+         
       <Card.Body>
       
         <form onSubmit={this.handleSubmit}>
           
         <div className='form-group'>
         <h3 style={mystyle}>Phone</h3>
-        value={this.state.Iphone}
-        onChange={this.handlePhoneIphoneChange}
         <img src = {ut} alt ="A"/>
+
+        <input
+          type='text'
+          className='form-control'
+          value={this.state.Iphone}
+          onChange={this.handlePhoneIphoneChange}
+          ></input>
+    
           </div>  
       
          <div>
@@ -101,6 +109,8 @@ class Phone extends React.Component {
         <form onSubmit={this.handleSubmit}>
         <div className='form-group'>
           <h3 style={mystyle}>Phone</h3>
+       
+       <img src = {sm} alt ="A"/>
         <input
           type='text' 
      
@@ -109,7 +119,7 @@ class Phone extends React.Component {
         value={this.state.Samsung}
         onChange={this.handlePhoneSamsungChange}
         ></input>
-          <img src = {sm} alt ="A"/>
+         
           </div>  
       
          <div>

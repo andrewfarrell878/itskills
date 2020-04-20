@@ -39,10 +39,12 @@ class phoneitem extends React.Component{
    
   
   <Card  border="primary" style={{ width: '16rem' }}>
-  <img src={iphone} alt ="A"/>
+  
   <Card.Body>
     <blockquote className="blockquote mb-0">
-  
+   
+      {this.props.phone.Iphone}
+      {this.props.phone.Samsung}
     
     </blockquote>
   </Card.Body>
@@ -55,21 +57,7 @@ class phoneitem extends React.Component{
 
 
 
-<Card  border="primary" style={{ width: '16rem' }}>
-<img src = {samsung} alt ="A"/>
-  <Card.Body>
-    <blockquote className="blockquote mb-0">
-  
-    
-    </blockquote>
-  </Card.Body>
-  <Button variant="info" onClick={this.DeletePhone}>Delete Phone</Button>
-  
 
-
-
-
-</Card>
             </div>
         )
     }
