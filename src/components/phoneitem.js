@@ -29,7 +29,7 @@ class phoneitem extends React.Component{
       
         color: "white",
         backgroundColor: "lightBlue",
-        padding: "10px",
+        padding: "1px",
         fontFamily: "Arial"
       };
   

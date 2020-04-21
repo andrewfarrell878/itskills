@@ -24,10 +24,10 @@ class Readcart extends React.Component{
     render() {
     const mystyle = {
 
-      
+        
         color: "white",
         backgroundColor: "lightBlue",
-        padding: "10px",
+        padding: "1px",
         fontFamily: "Arial"
       };
   
