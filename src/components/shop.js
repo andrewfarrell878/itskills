@@ -5,7 +5,8 @@ import axios from 'axios';
 import { newExpression } from '@babel/types';
 var ut = require('..//components/img/iphone.png');
 var sm = require('..//components/img/samsung.jpg');
-
+var hw = require('..//components/img/huawei.png');
+var sx = require('..//components/img/sony.jpg');
 class Phone extends React.Component {
   constructor(props){
     super(props);
@@ -13,12 +14,16 @@ class Phone extends React.Component {
     this.state = {
                   Iphone:'',
                   Samsung:'',
-    }
+                  Huawei:'',
+                  Sony:''
+                };
    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePhoneIphoneChange = this.handlePhoneIphoneChange.bind(this);
     this.handlePhoneSamsungChange = this.handlePhoneSamsungChange.bind(this);
-
+    this.handlePhoneHuaweiChange = this.handlePhoneHuaweiChange.bind(this);
+    this.handlePhoneSonyChange = this.handlePhoneSonyChange.bind(this);
+  
   }
   
   
@@ -31,9 +36,16 @@ class Phone extends React.Component {
     this.setState({Samsung: e.target.value});
   }
 
+  handlePhoneHuaweiChange(e){
+    this.setState({Huawei: e.target.value});
+  }
+
+  handlePhoneSonyChange(e){
+    this.setState({Sony: e.target.value});
+  }
  
   handleSubmit(e){
-    alert(this.state.Iphone + "      " + this.state.Samsung);
+    alert(this.state.Iphone + "      " + this.state.Samsung + "    " + this.state.Huawei + "    " + this.state.Sony);
     e.preventDefault();
     
     
@@ -41,7 +53,8 @@ class Phone extends React.Component {
               
                     Iphone: this.state.Iphone,
                     Samsung: this.state.Samsung,
-               
+                    Huawei: this.state.Huawei,
+                    Sony: this.state.Sony,
                 };
           axios.post('http://localhost:4000/api/phones',newPhone) 
           .then()
@@ -50,7 +63,9 @@ class Phone extends React.Component {
 
           this.setState({
           Iphone:'',
-          Samsung:''
+          Samsung:'',
+          Huawei:'',
+          Sony:''
         });    
   }
 
@@ -82,7 +97,7 @@ class Phone extends React.Component {
           
         <div className='form-group'>
         <h3 style={mystyle}>Iphone 8 64gbs/128gbs  </h3>
-        <h5 style={mystyle}>enter iphone model and storage size </h5>
+        <h5 style={mystyle}>Enter iphone model and storage size </h5>
         <img src = {ut} alt ="A"/>
 
         <input
@@ -111,7 +126,7 @@ class Phone extends React.Component {
         <form onSubmit={this.handleSubmit}>
         <div className='form-group'>
           <h3 style={mystyle}>Samsung Galaxy s9 64gbs/128gbs  </h3>
-       
+          <h5 style={mystyle}>Enter Samsung model and storage size </h5>
        <img src = {sm} alt ="A"/>
         <input
           type='text' 
@@ -133,11 +148,60 @@ class Phone extends React.Component {
         </form>
 
 
-        </Card.Body>
-          </Card>
-      
+       
      
-        
+      <form onSubmit={this.handleSubmit}>
+      <div className='form-group'>
+        <h3 style={mystyle}>Huawei p30 pro 128gbs/256gbs  </h3>
+        <h5 style={mystyle}>Enter Huawei model and storage size </h5>
+     <img src = {hw} alt ="A"/>
+      <input
+        type='text' 
+        className='form-control'
+    
+     
+      value={this.state.Huawei}
+      onChange={this.handlePhoneHuaweiChange}
+      ></input>
+       
+        </div>  
+    
+       <div>
+        <input
+        type="submit"
+        value="Add Phone to cart">
+        </input>
+      </div>
+      </form>
+
+      <form onSubmit={this.handleSubmit}>
+      <div className='form-group'>
+        <h3 style={mystyle}>Sony xperia 1 64gbs/128gbs</h3>
+        <h5 style={mystyle}>Enter Xperia model and storage size </h5>
+     <img src = {sx} alt ="A"/>
+      <input
+        type='text' 
+        className='form-control'
+    
+     
+      value={this.state.Sony}
+      onChange={this.handlePhoneSonyChange}
+      ></input>
+       
+        </div>  
+    
+       <div>
+        <input
+        type="submit"
+        value="Add Phone to cart">
+        </input>
+      </div>
+      </form>
+
+
+      </Card.Body>
+        </Card>
+    
         
         
         

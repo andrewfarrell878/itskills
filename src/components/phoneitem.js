@@ -45,7 +45,8 @@ class phoneitem extends React.Component{
    
       {this.props.phone.Iphone}
       {this.props.phone.Samsung}
-    
+      {this.props.phone.Huawei}
+      {this.props.phone.Sony}
     </blockquote>
   </Card.Body>
   <Button variant="info" onClick={this.DeletePhone}>Delete Phone</Button>

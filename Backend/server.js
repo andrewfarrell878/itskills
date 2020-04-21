@@ -30,7 +30,8 @@ const Schema = mongoose.Schema;
 const phoneSchema = new Schema({
     Iphone:String,
     Samsung:String,
-   
+    Huawei:String,
+    Sony:String
 })
 
 const PhoneModel = mongoose.model('phone', phoneSchema);
@@ -87,10 +88,13 @@ app.post('/api/phones', (req,res)=>{
     console.log('Post request Successful');
     console.log(req.body.Iphone);
     console.log(req.body.Samsung);
-    
+    console.log(req.body.Huawei);
+    console.log(req.body.Sony);
     PhoneModel.create({
         Iphone:req.body.Iphone, 
         Samsung:req.body.Samsung,
+        Huawei:req.body.Huawei,
+        Sony:req.body.Sony,
     });
 
     res.json('post recieved!');
